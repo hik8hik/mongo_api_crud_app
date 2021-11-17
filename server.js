@@ -32,13 +32,13 @@ app.set("view engine", "ejs");
 //app.set("views", path.resolve(__dirname, "views/ejs"));
 
 //LOAD ASSETS
-app.use("/css", express.static(path.resolve(__dirname, assets/css)))
-app.use("/img", express.static(path.resolve(__dirname, assets/img)))
-app.use("/js", express.static(path.resolve(__dirname, assets/js)))
+app.use("/css", express.static(path.resolve(__dirname, "assets/css")));
+app.use("/img", express.static(path.resolve(__dirname, "assets/img")));
+app.use("/js", express.static(path.resolve(__dirname, "assets/js")));
 
 //posts
 app.get("/", (req, res) => {
-  res.send("CRUD APPLICATION");
+  res.render("index");
 });
 
 //SERVER
