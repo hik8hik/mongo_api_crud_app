@@ -13,7 +13,9 @@
     <!--form handling-->
     <form action="/" method="POST">
       <table class="table-responsive table caption-top table-striped">
-        <caption>List of users</caption>
+        <caption>
+          List of users
+        </caption>
         <thead>
           <tr>
             <th>ID</th>
@@ -25,15 +27,17 @@
           </tr>
         </thead>
         <tbody>
-          
-            </tbody>
-            </table>
-            </form>
-            <!--form handling-->
-        </div>
+          <!-- include footer-->
+          <%-include('include/_show')%>
+          <!-- include footer-->
+        </tbody>
+      </table>
+    </form>
+    <!--form handling-->
+  </div>
 </main>
 <!-- main sect-->
 
 <!-- include footer-->
-<%- include('include/_footer')%>
+<%-include('include/_footer')%>
 <!-- include footer-->
