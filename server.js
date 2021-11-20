@@ -3,6 +3,8 @@ const dotenv = require("dotenv");
 const morgan = require("morgan");
 const path = require("path");
 
+const connectDB = require("./server/database/connection");
+
 const app = express();
 
 //CONFIGURATION FILE
@@ -11,6 +13,9 @@ const PORT = process.env.PORT || 8080;
 
 //LOG REQUESTS
 app.use(morgan("tiny"));
+
+//MONGODB CONNECTION
+connectDB();
 
 //PARSE
 app.use(express.urlencoded({ extended: true })); // To parse the incoming requests with JSON payloads
