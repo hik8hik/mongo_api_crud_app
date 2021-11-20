@@ -31,15 +31,28 @@ exports.create = (req, res) => {
 
 //RETRIEVE | RETURN SINGLE| ALL USERS
 exports.find = (req, res) => {
-  Userdb.find()
-    .then((user) => {
-      res.send(user);
-    })
-    .catch((err) => {
-      res
-        .status(500)
-        .send({ message: err.message || "Error Retriving User Info" });
-    });
+  if (req.query.id) {
+    req.query.id;
+    Userdb.findById(id)
+      .then((data) => {
+        if (!data) {
+          res.status(404).send({ message: `No user with id:${id} Found` });
+        } else {
+          res.send(data);
+        }
+      })
+      .catch((err) => {res.status(500).send({message: `Error retriving user with the id ${id}`})});
+  } else {
+    Userdb.find()
+      .then((user) => {
+        res.send(user);
+      })
+      .catch((err) => {
+        res
+          .status(500)
+          .send({ message: err.message || "Error Retriving User Info" });
+      });
+  }
 };
 
 //UPDATE USER BY ID
