@@ -1,13 +1,25 @@
-<tr>
-    <td>ashasbjas</td>
-    <td>hik8hik</td>
-    <td>hik8hik@gmail.com</td>
-    <td>Female</td>
-    <td>Active</td>
-    <td>
-        <a href="/update-user"><span><i class="fas fa-user-edit"></i></span
+<% for(var i = 0; i < users.length; i++) { %>
+    <tr>
+        <td>
+            <% =i+1 %>
+        </td>
+        <td>
+            <% =users[i].name %>
+        </td>
+        <td>
+            <% =users[i].email %>
+        </td>
+        <td>
+            <% =users[i].gender %>
+        </td>
+        <td>
+            <% =users[i].status %>
+        </td>
+        <td>
+            <a href="/update-user"><span><i class="fas fa-user-edit"></i></span
     ></a>
-        <a href="#"><span><i class="far fa-trash-alt"></i></span
+            <a href="#"><span><i class="far fa-trash-alt"></i></span
     ></a>
-    </td>
-</tr>
+        </td>
+    </tr>
+    <%}%>
