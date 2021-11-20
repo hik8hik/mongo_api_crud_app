@@ -3,7 +3,7 @@ var Userdb = require("../model/model");
 //CREATE AND SAVE NEW USER
 exports.create = (req, res) => {
   //VALIDATE REQUEST
-  if (req.body) {
+  if (!req.body) {
     res.status(400).send({ messgae: "Content Cannot Be Empty" });
     return;
   }
