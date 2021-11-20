@@ -1,5 +1,5 @@
 <!--form handling-->
-<form method="POST" id="add_user" class="row mb-3 align-items-center justify-content-center">
+<form action="/api/users" method="POST" id="add_user" class="row mb-3 align-items-center justify-content-center">
     <div class="card" style="width: 75%;">
         <img src="./ux-store-jJT2r2n7lYA-unsplash.jpg" class="card-img-top" alt="..." style="height: 20px;width: 100%;">
         <div class="card-body">
@@ -9,13 +9,13 @@
             <div class="row">
                 <div class="col-md">
                     <div class="form-floating">
-                        <input type="text" class="form-control border-0" id="floatingInputGrid" placeholder="name@example.com" />
+                        <input type="text" class="form-control border-0" id="floatingInputGrid" name="name" placeholder="name@example.com" />
                         <label for="floatingInputGrid">Name</label>
                     </div>
                 </div>
                 <div class="col-md">
                     <div class="form-floating">
-                        <input type="email" class="form-control border-0" id="floatingInputGrid" placeholder="name@example.com" />
+                        <input name="email" type="email" class="form-control border-0" id="floatingInputGrid" placeholder="name@example.com" />
                         <label for="floatingInputGrid">Email address</label>
                     </div>
                 </div>
@@ -35,7 +35,7 @@
                 <label class="form-check-label" for="inlineRadio2">Female</label>
             </div>
             <div class="form-check form-check-inline form-switch">
-                <input class="form-check-input" type="checkbox" id="actinaci" name="actinaci" value="1" onclick="yesno('actinaci','yesnos');">
+                <input class="form-check-input" type="checkbox" id="actinaci" name="status" value="1" onclick="yesno('actinaci','yesnos');">
                 <label name="yesnos" id="yesnos" class="form-check-label" for="actinaci">Inactive</label>
 
 
