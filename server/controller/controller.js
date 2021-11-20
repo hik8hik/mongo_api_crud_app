@@ -48,8 +48,8 @@ exports.update = (req, res) => {
     return res.status(400).send({ message: "Data to update can not be empty" });
   }
   const id = req.params.id;
-  Userdb.findByIdAndUpdate(id, req.body, { useFindAndModify: false }).then(
-    (data) => {
+  Userdb.findByIdAndUpdate(id, req.body, { useFindAndModify: false })
+    .then((data) => {
       if (!data) {
         res
           .status(404)
@@ -57,11 +57,26 @@ exports.update = (req, res) => {
       } else {
         res.send(data);
       }
-    }
-  ).catch(err=>{
-      res.status(500).send({message: "Error Updating User"})
-  })
+    })
+    .catch((err) => {
+      res.status(500).send({ message: "Error Updating User" });
+    });
 };
 
 //DELETE USER BY ID
-exports.delete = (req, res) => {};
+exports.delete = (req, res) => {
+  const id = req.params.id;
+  Userdb.findByIdAndDelete(id)
+    .then((data) => {
+      if (!data) {
+        res
+          .status(404)
+          .send({ message: `Cannot delete user with ${id}. User not found` });
+      } else {
+        res.send({ message: "user was deleted successfuly" });
+      }
+    })
+    .catch((err) => {
+      res.status(500).send({ message: "Error Deleting User ...." + id });
+    });
+};
