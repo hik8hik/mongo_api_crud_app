@@ -19,6 +19,6 @@ $("#update_user").submit(function (event) {
   event.preventDefault();
 
   var unindexed_array = $(this).serializeArray();
-  console.log(unindexed_array)
+  console.log(unindexed_array);
   alert("Update Success");
 });
