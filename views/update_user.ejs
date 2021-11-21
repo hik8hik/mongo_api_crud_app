@@ -48,7 +48,7 @@
                     <label class="form-check-label" for="inlineRadio2">Female</label>
                 </div>
                 <div class="form-check form-check-inline form-switch">
-                    <input class="form-check-input" type="checkbox" id="actinaci" name="status" value="1" <%=user.status=='Active' ? 'checked': '' %> onclick="yesno('actinaci ','yesnos ');">
+                    <input class="form-check-input" type="checkbox" id="actinaci" name="status" value="<%=user.status=='Active' ? 'Active': 'Inactive' %>" <%=user.status=='Active' ? 'checked': '' %> onclick="yesno('actinaci ','yesnos ');">
                     <label name="yesnos" id="yesnos" class="form-check-label" for="actinaci"><%=user.status=='Active' ? 'Active': 'Inactive' %></label>
 
 
