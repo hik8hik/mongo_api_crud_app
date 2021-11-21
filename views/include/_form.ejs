@@ -1,7 +1,7 @@
 <!--form handling-->
 <form action="/api/users" method="POST" id="add_user" class="row mb-3 align-items-center justify-content-center">
     <div class="card" style="width: 75%;">
-        <img src="./ux-store-jJT2r2n7lYA-unsplash.jpg" class="card-img-top" alt="..." style="height: 20px;width: 100%;">
+        <img src="https://images.unsplash.com/photo-1622547748225-3fc4abd2cca0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80" class="card-img-top" alt="..." style="width: 100%;">
         <div class="card-body">
             <h5 class="card-title">User Details</h5>
             <p class="card-text">Input User Information</p>
@@ -35,8 +35,9 @@
                 <label class="form-check-label" for="inlineRadio2">Female</label>
             </div>
             <div class="form-check form-check-inline form-switch">
-                <input class="form-check-input" type="checkbox" id="actinaci" name="status" value="Inactive" onclick="yesno('actinaci','yesnos');">
-                <label name="yesnos" id="yesnos" class="form-check-label" for="actinaci">Inactive</label>
+                <input class="form-check-input" type="checkbox" id="puactinaci" value="Inactive">
+                <label name="yesnos" id="yesnos" class="form-check-label" for="puactinaci">Inactive</label>
+                <input id="chstatus" type="hidden" name="status" />
 
 
             </div>
