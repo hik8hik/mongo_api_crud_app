@@ -8,7 +8,9 @@ const checkbox = document.getElementById('actinaci')
 checkbox.addEventListener('change', (event) => {
   if (event.currentTarget.checked) {
     alert('checked');
-  } else {
+    document.getElementById("actinaci").value = "Active";
+} else {
     alert('not checked');
+    document.getElementById("actinaci").value = "Inactive";
   }
 })
