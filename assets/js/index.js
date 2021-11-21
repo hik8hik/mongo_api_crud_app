@@ -46,12 +46,31 @@ $("#update_user").submit(function (event) {
   });
   // VARIABLE TO MAKE REQUEST
   var request = {
-    url: `http://localhost:3000/api/users/${data.id}`,
-    method: "PUT",
-    data: data,
+    "url": `http://localhost:3000/api/users/${data.id}`,
+    "method": "PUT",
+    "data": data,
   };
   //CALL AJAX TO SEND THE DATA
   $.ajax(request).done(function (response) {
     alert("Update Success");
   });
 });
+
+if (window.location.pathname == "/") {
+  $ondelete = $(".table tbody td a.delete");
+  $ondelete.click(function () {
+    var id = $(this).attr("data-id");
+
+    var request = {
+      "url": `http://localhost:3000/api/users/${id}`,
+      "method": "DELETE",
+    };
+
+    if (confirm("Are You Sure You Want To Delete user")) {
+      $.ajax(request).done(function (response) {
+        alert("Deletion Success");
+        location.reload();
+      });
+    }
+  });
+}
