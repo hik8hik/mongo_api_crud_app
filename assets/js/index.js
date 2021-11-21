@@ -1,7 +1,3 @@
-$("#add-user").submit(function (event) {
-  alert("Data Added Successfully");
-});
-
 //CONTROL THE VALUE OF CHECKBOX
 const checkbox = document.getElementById("actinaci");
 
@@ -13,4 +9,16 @@ checkbox.addEventListener("change", (event) => {
     document.getElementById("yesnos").innerHTML = "Inactive";
     document.getElementById("actinaci").value = "Inactive";
   }
+});
+
+$("#add_user").submit(function (event) {
+  alert("Data Added Successfully");
+});
+
+$("#update_user").submit(function (event) {
+  event.preventDefault();
+
+  var unindexed_array = $(this).serializeArray();
+  console.log(unindexed_array)
+  alert("Update Success");
 });
