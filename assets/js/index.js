@@ -39,20 +39,18 @@ $("#add_user").submit(function (event) {
 $("#update_user").submit(function (event) {
   event.preventDefault();
   data = {};
+  //GET THE UNUNDEXED ARRAY
   var unindexed_array = $(this).serializeArray();
   $.map(unindexed_array, function (n, i) {
     data[n["name"]] = n["value"];
   });
-
-  console.log(unindexed_array);
-  console.log(data);
-
+  // VARIABLE TO MAKE REQUEST
   var request = {
-    "url": `http://localhost:3000/api/users/${data.id}`,
-    "method": "PUT",
-    "data": data,
+    url: `http://localhost:3000/api/users/${data.id}`,
+    method: "PUT",
+    data: data,
   };
-
+  //CALL AJAX TO SEND THE DATA
   $.ajax(request).done(function (response) {
     alert("Update Success");
   });
